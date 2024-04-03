@@ -1,11 +1,11 @@
 const isAdult = (name, age) => {
   if (age >= 18) {
-    console.log("Hola " + name + ", " + "eres mayor de edad");
+    console.log('Hola ' + name + ', ' + 'eres mayor de edad');
   } else {
-    console.log("Hola " + name + ", " + "eres menor de edad");
+    console.log('Hola ' + name + ', ' + 'eres menor de edad');
   }
 };
-isAdult("Ales", 18);
+isAdult('Ales', 18);
 
 const number = (numberA, numberB) => {
   if (numberA > numberB) {
@@ -16,42 +16,81 @@ const number = (numberA, numberB) => {
 };
 number(7, 8);
 
-const value = (numberC) => {
-  if (numberC >= 1) {
-    console.log("positivo");
-  } else if (numberC <= -1) {
-    console.log("negativo");
-  } else if (numberC === 0) {
-    console.log("cero");
+const value = number => {
+  if (number > 0) {
+    console.log('positivo');
+  } else if (number < 0) {
+    console.log('negativo');
+  } else if (number === 0) {
+    console.log('cero');
   }
 };
-value(-7);
+value(2);
 
-const getAverage = (numberD, numberE, numberF) => {
-  if (
-    numberD + numberE + numberF / 3 >= 0 &&
-    numberD + numberE + numberF / 3 <= 4
-  ) {
-    console.log("Suspenso");
-  } else if (
-    numberD + numberE + numberF / 3 >= 5 ||
-    numberD + numberE + numberF / 3 <= 8
-  ) {
-    console.log("Aprobado");
-  } else if (numberD + numberE + numberF / 3 >= 8) {
-    console.log("Matrícula de honor");
+const getAverage = (numberA, numberB, numberC) => {
+  const average = (numberA + numberB + numberC) / 3;
+  if (average >= 0 && average < 5) {
+    console.log('Suspenso');
+  } else if (average >= 5 && average <= 8) {
+    console.log('Aprobado');
+  } else {
+    console.log('Matrícula de honor');
   }
 };
-getAverage(0, 5, 5);
+getAverage(10, 9, 9);
 
-const biggerNumber = (numberG, numberH, numberI) => {
-  if (numberG > numberH && numberI) {
-    console.log(numberG);
+const biggerNumber = (numberA, numberB, numberC) => {
+  if (numberA > numberB && numberA > numberC) {
+    console.log(numberA);
   }
-  if (numberH > numberG && numberI) {
-    console.log(numberH);
-  } else if (numberI > numberG && numberH) {
-    console.log(numberI);
+  if (numberB > numberA && numberB > numberC) {
+    console.log(numberB);
+  } else if (numberC > numberA && numberC > numberB) {
+    console.log(numberC);
   }
 };
 biggerNumber(4, 5, 6);
+
+const isDivisibleByThreeOrFive = number => {
+  if (number % 3 === 0 && number % 5 === 0) {
+    console.log('Es divisible por 3 y 5');
+  } else if (number % 5 === 0) {
+    console.log('Es divisible por 5');
+  } else if (number % 3 === 0) {
+    console.log('Es divisible por 3');
+  } else {
+    console.log(number);
+  }
+};
+isDivisibleByThreeOrFive(30);
+
+const evenOrOdd = number => {
+  if (number === 0) {
+    console.log('Es cero');
+  } else if (number % 2 === 0) {
+    console.log('Es un número par');
+  } else {
+    console.log('Es un número impar');
+  }
+};
+evenOrOdd(10);
+
+const year = number => {
+  if ((number % 4 === 0 && number % 100 !== 0) || number % 400 === 0) {
+    console.log('Es año bisiesto');
+  } else {
+    console.log('No es año bisiesto');
+  }
+};
+year(2024);
+
+const additionOfValues = (numberA, numberB) => {
+  if (typeof numberA === 'string') {
+    numberA = Number(numberA);
+  }
+  if (typeof numberB === 'string') {
+    numberB = Number(numberB);
+  }
+  console.log(numberA + numberB);
+};
+additionOfValues(9, '5');
